@@ -1,13 +1,21 @@
 package com.tm.ticketmanagementservice.controllers;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
-@RestController
+
+import org.springframework.boot.SpringApplication;
+        import org.springframework.boot.autoconfigure.SpringBootApplication;
+        import org.springframework.web.bind.annotation.*;
+        import org.springframework.stereotype.*;
+
+@Controller
+@SpringBootApplication
 public class TicketController {
 
-    @GetMapping("/welcome")
-    public String Welcome(){
-    String  welcomeMSg = "Welcome to springboot planet!";
-    return  welcomeMSg;
+    @RequestMapping("/")
+    @ResponseBody
+    String home() {
+        return "Hello World!";
     }
+
+
+
 }
